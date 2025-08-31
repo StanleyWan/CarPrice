@@ -114,7 +114,7 @@ The following regression models and hyperparameter grids were evaluated:
 
 ---
 
-### Regression Models and Hyperparameter Grids
+### Regression Models and Hyperparameter Grids Used in Cross Validation
 
 | Regression Model | Grid Parameters Tested                                                                 |
 |------------------|----------------------------------------------------------------------------------------|
