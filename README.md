@@ -35,7 +35,7 @@ The dataset has several issues such as missing values, extreme numbers, unusuall
 Below is my initial understanding of the data:
 
 a. **Missing values** – Many features contain missing data. A summary graph shows the percentages of missing values for each feature.  
-![Missing Value](image/missingness_topN.png)
+![Missing Value](images/missingness_topN.png)
 b. **Zero values in numeric features** – Some numeric features contain a large number of zeros. A summary table highlights this issue.  
 c. **Car age range** – The dataset includes vehicles ranging from brand new to over 120 years old. Extremely old cars are unrealistic and do not reflect true market prices.  
 d. **Odometer values** – While many cars have reasonable mileage (up to 500K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
