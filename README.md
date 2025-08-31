@@ -45,6 +45,10 @@ b. **Zero values in numeric features** – Some numeric features contain a large
   <em>Figure: Numeric features with missing values</em>
 </p>
 c. **Car age range** – The dataset includes vehicles ranging from brand new to over 120 years old. Extremely old cars are unrealistic and do not reflect true market prices.  
+<p align="center">
+  <img src="images/vehicle_distribution.png" width="800"/><br>
+  <em>Figure: Vehicle Age Distribution</em>
+</p>
 d. **Odometer values** – While many cars have reasonable mileage (up to 500K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
 e. **Extreme prices** – Over 7% of cars are listed as *free*. On the other hand, some records show extreme prices of **$1M, $10M, or even $100M**, which are almost certainly fabricated.  
 f. **Irrelevant features** – Some features, such as `id` and `VIN`, do not provide meaningful information for predicting car prices.  
