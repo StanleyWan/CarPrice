@@ -128,13 +128,13 @@ The following regression models and hyperparameter grids were evaluated:
 
 ### Best Hyperparameters Found (after Cross Validation)
 
-| Model        | Best Params                       |
-|--------------|-----------------------------------|
-| Lasso        | `alpha = 0.0001`                  |
-| ElasticNet   | `alpha = 0.0001`, `l1_ratio = 0.1`|
-| Ridge        | `alpha = 10`                      |
-| OLS (Linear) | None                              |
-| Huber        | `alpha = 0.001`, `epsilon = 2.5`  |
+| Regression Model|  Best Params                       |
+|-----------------|------------------------------------|
+| Lasso           | `alpha = 0.0001`                   |
+| ElasticNet      | `alpha = 0.0001`, `l1_ratio = 0.1` |
+| Ridge           | `alpha = 10`                       |
+| OLS (Linear)    | None                               |
+| Huber           | `alpha = 0.001`, `epsilon = 2.5`   |
 
 ---
 
@@ -143,54 +143,13 @@ The following regression models and hyperparameter grids were evaluated:
 After refitting each model using the **entire training dataset (80%)**, we evaluated them on the untouched **test dataset (20%)**.  
 The performance metrics are summarized below:
 
-| Model       | Best Params                                | Selected Features                  | RMSE ($) | MAE ($) | R² (log) | R² ($) | RMSE trim2% ($) | MAE trim2% ($) |
-|-------------|--------------------------------------------|------------------------------------|----------|---------|----------|--------|-----------------|----------------|
-| **Huber**   | `{alpha: 0.001, epsilon: 2.5}`             | year, cylinders_num, js_type, odometer… | 8823.15  | 5837.66 | 0.6942   | 0.6217 | 7389.41         | 5367.41        |
-| **Lasso**   | `{alpha: 0.0001}`                          | year, cylinders_num, js_type, odometer… | 8831.18  | 5837.01 | 0.6945   | 0.6210 | 7386.25         | 5363.88        |
-| **ElasticNet** | `{alpha: 0.0001, l1_ratio: 0.1}`        | year, cylinders_num, js_type, odometer… | 8832.49  | 5837.64 | 0.6945   | 0.6209 | 7387.39         | 5364.42        |
-| **Ridge**   | `{alpha: 10}`                              | year, cylinders_num, js_type, odometer… | 8832.86  | 5837.82 | 0.6945   | 0.6208 | 7387.72         | 5364.58        |
-| **OLS**     | `{}`                                       | year, cylinders_num, js_type, odometer… | 8832.98  | 5837.88 | 0.6945   | 0.6208 | 7387.84         | 5364.63        |
+| Regression Model | Best Params                                | Selected Features                  | RMSE ($) | MAE ($) | R² (log) | R² ($) | RMSE trim2% ($) | MAE trim2% ($) |
+|------------------|--------------------------------------------|------------------------------------|----------|---------|----------|--------|-----------------|----------------|
+| **Huber**        | `{alpha: 0.001, epsilon: 2.5}`             | year, cylinders_num, js_type, odometer… | 8823.15  | 5837.66 | 0.6942   | 0.6217 | 7389.41         | 5367.41        |
+| **Lasso**        | `{alpha: 0.0001}`                          | year, cylinders_num, js_type, odometer… | 8831.18  | 5837.01 | 0.6945   | 0.6210 | 7386.25         | 5363.88        |
+| **ElasticNet**   | `{alpha: 0.0001, l1_ratio: 0.1}`           | year, cylinders_num, js_type, odometer… | 8832.49  | 5837.64 | 0.6945   | 0.6209 | 7387.39         | 5364.42        |
+| **Ridge**        | `{alpha: 10}`                              | year, cylinders_num, js_type, odometer… | 8832.86  | 5837.82 | 0.6945   | 0.6208 | 7387.72         | 5364.58        |
+| **OLS**          | `{}`                                       | year, cylinders_num, js_type, odometer… | 8832.98  | 5837.88 | 0.6945   | 0.6208 | 7387.84         | 5364.63        |
 
 ---
-
-
-
-
-
-##4.  Modeling
-In the Modeling section, we make a hold-out split which split the full clean dataset into Train Dataset and Test Dataset.  The ratio is 80/20.  The Training Dataset is 80% and the Test Dataset is 20%.  The Test Dataset will set stays untouched until the very end.
-In order to have a training and testing flow clean, conasistent and leak-safe, we biuld a Pipeline container to chains multiple steps (like imputation, scaling and regression) into one object. 
-We then run 5-fold Cross Validation(CV) with GridSearchCV using the Training Dataset. The following is the name of the Regression  and their GridSet that used on the CV.
-
-			Name of Regression			GridSet Used:
-			LinearRegression : 			No
-			Ridge:                      GridSet for alpha:   (0.001, 0.01, 0.1, 1, 10, 100)
-			Lasso:                      GridSet for alpha:   ( 0.0001, 0.001, 0.01, 0.1, 1)
-			ElasticNet:                 GridSet for alpha:   (0.0001, 0.001,0.01,0.1, )
-                                        GridSet for Ratio:   (0.1, 0.5, 0.9)
-			HuberRegressor              GridSet for epsilon: (1.2,1.5,1.8,2.5) 
-                                        GridSet for alpha:   (0.000001, 0.00001, 0.0001,0.001)
-										
-we got the best superparameter as follows:
-
-			Lasso:		  alpha:	0.0001
-			EleasticNet	  alpha:    0.0001
-					      Ratio:    0.1
-			Rdige:		  alpha:	10
-			OLS		      No
-			Huber		  alpha:    0.001
-					      Epsilon   2.5
-		   
-Refit the model using the entire Training Dataset (all 80%), we got the best model.  With the best model, we thus get the prediction/evaluation with the final untouch Test DataSet.  The following is the metrics we got from the Final Test:
-
-Model	Best Params	Selected 6	RMSE($)	MAE($)	R²_log	R²($)	RMSE_trim2%($)	MAE_trim2%($)
-0	Huber	{'reg__alpha': 0.001, 'reg__epsilon': 2.5}	year, cylinders_num, js_type, odometer_10k, js...	8823.150950	5837.659077	0.694194	0.621666	7389.407433	5367.409313
-1	Lasso	{'reg__alpha': 0.0001}	year, cylinders_num, js_type, odometer_10k, js...	8831.175428	5837.008993	0.694464	0.620977	7386.253225	5363.875280
-2	ElasticNet	{'reg__alpha': 0.0001, 'reg__l1_ratio': 0.1}	year, cylinders_num, js_type, odometer_10k, js...	8832.491834	5837.637211	0.694465	0.620864	7387.389028	5364.415106
-3	Ridge	{'reg__alpha': 10}	year, cylinders_num, js_type, odometer_10k, js...	8832.863577	5837.820147	0.694466	0.620832	7387.724159	5364.576595
-4	OLS	{}	year, cylinders_num, js_type, odometer_10k, js...	8832.984490	5837.880880	0.694466	0.620822	7387.836299	5364.631111
-
-
-
-
 
