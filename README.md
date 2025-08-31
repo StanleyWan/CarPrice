@@ -152,7 +152,7 @@ The performance metrics are summarized below:
 | **OLS**          | `{}`                                       | year, cylinders_num, js_type, odometer… | 8832.98  | 5837.88 | 0.6945   | 0.6208 | 7387.84         | 5364.63        |
 
 ---
-# 6. Evaluation
+# 5. Evaluation
 
 The major evaluation was conducted on the **final 20% untouched test set**.  
 The resulting metrics are summarized in the table above.
