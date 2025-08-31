@@ -10,5 +10,5 @@ This project explores a dataset: [vehicles.csv](data/vehicles.csv) of 426,000 us
 
 The final deliverable provides actionable insights and recommendations to a client—a used car dealership—on what consumers value most when purchasing a used car.
 
-Here is [the link of the Jupyter Notebook :Car_Price.ipynb](https://github.com/StanleyWan/Coupon/blob/main/prompt.ipynb) with visualizations and probability distributions
+Here is [the link of the Jupyter Notebook: ](Car_Price.ipynb) with visualizations and probability distributions
 
