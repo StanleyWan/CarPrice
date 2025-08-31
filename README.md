@@ -91,11 +91,15 @@ To improve correlation between categorical features and car price:
 Sequential Feature Selection (SFS) was used to identify the most important predictors.  
 The top predictors and their corresponding cross-validation performance (negative MSE) are:  
 
-- **Year** (CV neg-MSE = −0.296639)  
-- **Cylinders** (CV neg-MSE = −0.233038)  
-- **Odometer** (CV neg-MSE = −0.204125)  
-- **Drive** (CV neg-MSE = −0.178581)  
-- **Fuel type** (CV neg-MSE = −0.159953)  
-- **Manufacturer** (CV neg-MSE = −0.150940)  
+### Selected Features from SFS
+
+| Feature       | CV neg-MSE   |
+|---------------|--------------|
+| Year          | −0.296639    |
+| Cylinders     | −0.233038    |
+| Odometer      | −0.204125    |
+| Drive         | −0.178581    |
+| Fuel type     | −0.159953    |
+| Manufacturer  | −0.150940    |
 
 
