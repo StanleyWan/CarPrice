@@ -21,7 +21,7 @@ Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) wit
        (e.g., “How do mileage, age, and brand affect price?”)
 
 
-## Data Understanding
+## 2. Data Understanding
 
 The raw dataset contains **426,000 rows × 18 columns**, meaning it has 426,000 records with 18 features.  
 The features include:  
@@ -34,24 +34,14 @@ Among them, three are **numeric features**, and the rest are **categorical featu
 The dataset has several issues such as missing values, extreme numbers, unusually wide ranges, and fabricated-looking records.  
 Below is my initial understanding of the data:
 
-1. **Missing values** – Many features contain missing data. A summary table shows both the counts and percentages of missing values for each feature.  
-2. **Zero values in numeric features** – Some numeric features contain a large number of zeros. A summary table highlights this issue.  
-3. **Car age range** – The dataset includes vehicles ranging from brand new to over 120 years old. Extremely old cars are unrealistic and do not reflect true market prices.  
-4. **Odometer values** – While many cars have reasonable mileage (up to 500K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
-5. **Extreme prices** – Over 7% of cars are listed as *free*. On the other hand, some records show extreme prices of **$1M, $10M, or even $100M**, which are almost certainly fabricated.  
-6. **Irrelevant features** – Some features, such as `id` and `VIN`, do not provide meaningful information for predicting car prices.  
-7. **Severely missing features** – The `size` feature has over **70% missing values**, making it practically unusable.  
-8. **Non-standardized text** – Car model names are highly descriptive and inconsistent, making it difficult to reliably identify unique models.  
-9. **Redundancy** – Certain features disclose overlapping information (e.g., `region` and `state`), leading to redundancy in the dataset.  
+a. **Missing values** – Many features contain missing data. A summary table shows both the counts and percentages of missing values for each feature.  
+b. **Zero values in numeric features** – Some numeric features contain a large number of zeros. A summary table highlights this issue.  
+c. **Car age range** – The dataset includes vehicles ranging from brand new to over 120 years old. Extremely old cars are unrealistic and do not reflect true market prices.  
+d. **Odometer values** – While many cars have reasonable mileage (up to 500K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
+e. **Extreme prices** – Over 7% of cars are listed as *free*. On the other hand, some records show extreme prices of **$1M, $10M, or even $100M**, which are almost certainly fabricated.  
+f. **Irrelevant features** – Some features, such as `id` and `VIN`, do not provide meaningful information for predicting car prices.  
+g. **Severely missing features** – The `size` feature has over **70% missing values**, making it practically unusable.  
+h. **Non-standardized text** – Car model names are highly descriptive and inconsistent, making it difficult to reliably identify unique models.  
+i. **Redundancy** – Certain features disclose overlapping information (e.g., `region` and `state`), leading to redundancy in the dataset.  
 
-•	Raw dataset: 426,000 rows × 18 columns.
-•	Features include id, region, price, year, manufacturer, model, condition, cylinders, fuel, odometer, title_state, transmission, VIN, drive, type, size, paint color, and state. 
-•	Some features contain large amount of missing item(figure), like size (70%)(table)
-•	Some features are price unrelated like id,VIN.
-•	Some features are overlapped like region and state
-•	3 numeric features and 15 categorical features
-•	extreme price records exist. 34930 rocords are $0-$9 and 21 records are more than $100M. (outlier)
-•	the long range in year records. It comes from 1900 to 2022 (graph)
-•	4931 records of odometer is from 0-9 miles and 638 records exceed 1M miles(outlier
-•	the name of car model is vague and hard to classify.(example)
-•	Contain some funny records, such as free for a new car etc
+
