@@ -2,7 +2,7 @@
 Assignment 11.1 What Drives the Price of a Car
 
 ## Overview
-This project explores a dataset: [vehicles.csv](data/vehicles.csv) of 426,000 used cars (sampled from the original Kaggle dataset of 3 million entries) with the goal of identifying the key factors that influence used car prices. The analysis follows the CRISP-DM (Cross Industry Standard Process for Data Mining) methodology to ensure a structured and repeatable approach. 
+This project explores a used car dataset: [vehicles.csv](data/vehicles.csv) of 426,000 used cars (sampled from the original Kaggle dataset of 3 million entries) with the goal of identifying the key factors that influence used car prices. The analysis follows the CRISP-DM (Cross Industry Standard Process for Data Mining) methodology to ensure a structured and repeatable approach. 
 <p align="center">
   <img src="images/crisp.png" width="400"/><br>
   <em>Figure 1: CRISP-DM framework.  Source: UC Berkeley</em>
@@ -10,7 +10,8 @@ This project explores a dataset: [vehicles.csv](data/vehicles.csv) of 426,000 us
 
 The final deliverable provides actionable insights and recommendations to a client—a used car dealership—on what consumers value most when purchasing a used car.
 
-Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) with visualizations and probability distributions
+Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) with visualizations and probability distributions.
 
-[Open in Colab](https://colab.research.google.com/github/StanleyWan/CarPrice/blob/main/Car_Price.ipynb)
+The Jupyter Notebook [Car_Price.ipynb](Car_Price.ipynb) is developed under Google's Colab.
+
 
