@@ -152,4 +152,35 @@ The performance metrics are summarized below:
 | **OLS**          | `{}`                                       | year, cylinders_num, js_type, odometer… | 8832.98  | 5837.88 | 0.6945   | 0.6208 | 7387.84         | 5364.63        |
 
 ---
+# 6. Evaluation
 
+### Interpreting the Metrics
+- **R² ($) = 0.62**  
+  The model explains about **62% of the variance** in car prices (in dollar space). For messy, real-world used-car data, this is a respectable level of performance.  
+
+- **RMSE ≈ $8.8K / MAE ≈ $5.8K**  
+  On average, individual predictions are off by about **$6K**, with larger errors increasing the RMSE.  
+  After trimming the most extreme 4% of records (2% high, 2% low), the errors improve to **$7.4K (RMSE) / $5.36K (MAE)** — meaning most cars are predicted within **$5K–6K**.  
+
+### Model Comparison
+All five regression models performed nearly identically — differences in error metrics are minimal.  
+This suggests that the **predictive signal comes primarily from the features themselves**, rather than the choice of linear regularization technique.  
+
+### Sources of Error
+Why do errors still feel large at times?  
+- **Extreme vehicles / outliers** strongly influence residuals.  
+- **Categorical sparsity** (rare categories with limited data) adds noise and reduces precision.  
+
+### Overall Assessment
+Is this a *“good”* model?  
+✅ **Yes.** While not perfect, the model achieves a strong balance between interpretability and accuracy, and performs reasonably well given the noisy, imperfect nature of real-world used-car data.  
+
+
+# 6. Evaluation
+The meanining of the metrics:
+R²($) = 0.62.  It means the model explains ~62% of price variance in dollar spce.  For messy, real-world used-dar dta, that's respectable.
+RMSE = ~$8.8k / MAE = ~5.8k.  Typical single-car errors around $6k, with larger misses pulling RMSE up.  After 4 percents trimming(2%high, 2%low), errors drop to $7.4k/$5.36k,  so most cars are predicted within ~5-6K.
+What the table telling us
+All five regression model are basically ties.  Differences are tiny.  That implies feature signal ,not the specific linear penalty, is the main limiter.
+Then why error can sometimes still feel large? It comes from the extreme vehicles.  It behave like outliers affect the prediction.  And also Categroical sparsity is also a concern.
+So is it a "good" model.  The answer is yes though not perfect.
