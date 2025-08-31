@@ -188,8 +188,47 @@ Is this a *“good”* model?
 ✅ **Yes.** While not perfect, the model achieves a strong balance between interpretability and accuracy.  
 Given the noisy, imperfect nature of real-world used-car data, the performance is both reasonable and reliable.  
 
+# 6. Deployment
 
-# 6. Evaluation
+For deployment, the project used **Sequential Feature Selection (SFS)** to identify the six most important predictors (lowest CV MSE):  
+**Year, Cylinders, Odometer, Drive, Fuel type, and Manufacturer.**
+
+After evaluation, the predicted prices were reasonably solid, and the findings align well with real-world expectations. These features can be interpreted as **key price drivers for used cars**:
+
+1. **Mileage (Odometer)** – Price decreases with every additional 10K miles.  
+2. **Age (Year)** – Price decreases with each additional year of age.  
+3. **Cylinders** – More cylinders generally indicate better performance and capability, which supports higher prices.  
+4. **Drive (e.g., 4WD)** – Four-wheel drive is often considered a premium feature, associated with safety and stability.  
+5. **Manufacturer (Brand)** – Well-regarded brands (reliability, reputation) tend to retain higher value.  
+6. **Fuel Type (Diesel)** – Diesel vehicles (especially trucks/pickups) are often priced higher due to utility and durability.  
+
+---
+
+✅ **Recommendation:**  
+Car dealerships and resellers should treat these six features as the **primary price drivers** when evaluating or pricing used vehicles.
+
+
+
+
+
+# 6. Deployment
+On the project, we used Sequential Features Selection to select 6 lowest MSE features. They are Year, Cylinders, Odometer, Drive, Fuel type, and Manufacturer.  After evaluation, the predict price is also pretty solid.  It thus can interpret as price driver for a used ca. The find out also reflect in reality.  
+a. Lower mileage 
+   price will decrease for every 10K mileage added.
+b. Newer age
+   price will decrease per year.
+c. More Cylinders
+   more cyclinders represent the better performance and capability.
+d. 4WD drive
+   it is a kind of premium.  It represent more safe and more stable.
+e. good Brand
+   good means reliable
+f. diesel  
+   diesel mostly used on truck/pickup/, it is usually pricer.
+
+So we highly recommend car dealership treat these 6 features as a price driver for a used car
+
+
 The meanining of the metrics:
 R²($) = 0.62.  It means the model explains ~62% of price variance in dollar spce.  For messy, real-world used-dar dta, that's respectable.
 RMSE = ~$8.8k / MAE = ~5.8k.  Typical single-car errors around $6k, with larger misses pulling RMSE up.  After 4 percents trimming(2%high, 2%low), errors drop to $7.4k/$5.36k,  so most cars are predicted within ~5-6K.
