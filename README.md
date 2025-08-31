@@ -50,7 +50,7 @@ c. **Car age range** – The dataset includes vehicles ranging from brand new to
   <em>Figure: Vehicle Age Distribution</em>
 </p>
 
-d. **Odometer values** – While many cars have reasonable mileage (up to 500K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
+d. **Odometer values** – While many cars have reasonable mileage (up to 300K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
 <p align="center">
   <img src="images/odometer_distributions_bar.png" width="800"/><br>
   <em>Figure: Odometer Value Distribution</em>
