@@ -10,8 +10,6 @@ This project explores a used car dataset: [vehicles.csv](data/vehicles.csv) of 4
 
 The final deliverable provides actionable insights and recommendations to a client—a used car dealership—on what consumers value most when purchasing a used car.
 
-Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) with visualizations and probability distributions.
-
-The Jupyter Notebook [Car_Price.ipynb](Car_Price.ipynb) is developed under Google's Colab.
+Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) with visualizations and probability distributions. It is developed under Google's Colab.
 
 
