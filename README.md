@@ -61,4 +61,41 @@ h. **Non-standardized text** – Car model names are highly descriptive and inco
 
 i. **Redundancy** – Certain features disclose overlapping information (e.g., `region` and `state`), leading to redundancy in the dataset.  
 
+## 3. Data Preparation
+
+In order to make the dataset useful for modeling, several **data cleaning and transformation steps** were performed, including imputation, feature/record removal, and capping of unrealistic values.
+
+### Data Cleaning
+- **Feature removal**:  
+  - Dropped `id` and `VIN` because they are unrelated to price.  
+  - Dropped `size` due to excessive missing values (>70%).  
+  - Dropped `model` because the descriptions were inconsistent and not standardized.  
+
+- **Outlier capping**:  
+  - Applied caps to extreme values for key numeric features:  
+    - **Price**: limited to \$3,000 – \$100,000  
+    - **Age**: maximum of 30 years  
+    - **Odometer**: maximum of 300,000 miles  
+
+- **Missing value imputation**:  
+  - **Categorical features** → imputed with **mode**  
+  - **Numeric features** → imputed with **median**  
+
+### Feature Encoding
+To improve correlation between categorical features and car price:  
+- Instead of One-Hot Encoding (which produces very sparse features), we applied:  
+  - **James–Stein Encoding** for high-cardinality categorical features such as `manufacturer`, `state`, and `paint_color`.  
+  - **Ordinal encoding** for features with natural order (e.g., `cylinders`, `type`).  
+
+### Feature Selection
+Sequential Feature Selection (SFS) was used to identify the most important predictors.  
+The top predictors and their corresponding cross-validation performance (negative MSE) are:  
+
+- **Year** (CV neg-MSE = −0.296639)  
+- **Cylinders** (CV neg-MSE = −0.233038)  
+- **Odometer** (CV neg-MSE = −0.204125)  
+- **Drive** (CV neg-MSE = −0.178581)  
+- **Fuel type** (CV neg-MSE = −0.159953)  
+- **Manufacturer** (CV neg-MSE = −0.150940)  
+
 
