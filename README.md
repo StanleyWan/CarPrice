@@ -1,7 +1,7 @@
 # CarPrice
 Assignment 11.1 What Drives the Price of a Car
 
-##Overview
+## Overview
 This project explores a dataset: [vehicles.csv](data/vehicles.csv) of 426,000 used cars (sampled from the original Kaggle dataset of 3 million entries) with the goal of identifying the key factors that influence used car prices. The analysis follows the CRISP-DM (Cross Industry Standard Process for Data Mining) methodology to ensure a structured and repeatable approach. 
 <p align="center">
   <img src="images/crisp.png" width="400"/><br>
