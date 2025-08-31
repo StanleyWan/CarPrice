@@ -14,7 +14,7 @@ Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) wit
 
 # Methodology (CRISP-DM Framework)
 
-1. Business Understanding  
+## 1. Business Understanding  
    - **Objective:**  
      &nbsp;&nbsp;&nbsp;&nbsp;Identify what makes cars more or less expensive.  
      &nbsp;&nbsp;&nbsp;&nbsp;Translate business problem into analytical questions  
