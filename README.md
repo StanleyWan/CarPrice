@@ -13,7 +13,7 @@ The final deliverable provides actionable insights and recommendations to a clie
 Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) with visualizations and probability distributions. It is developed under Google's Colab.
 
 # Methodology (CRISP-DM Framework)
-  ## 1.	Business Understanding
-  Objective: identify what makes cars more or less expensive.
-  Translate business problem into analytical questions (e.g., “How do mileage, age, and brand affect price?”).
+    ## 1.	Business Understanding
+        Objective: identify what makes cars more or less expensive.
+        Translate business problem into analytical questions (e.g., “How do mileage, age, and brand affect price?”).
 
