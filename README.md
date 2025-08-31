@@ -106,7 +106,8 @@ The top predictors and their corresponding cross-validation performance (negativ
 In this stage, the dataset was split into **Training (80%)** and **Test (20%)** sets.  
 The test set remained **untouched until the final evaluation** to ensure unbiased performance measurement.  
 
-To maintain a clean, consistent, and leak-free workflow, we built a **Pipeline** that chained multiple steps (imputation, scaling, and regression) into one object.  
+To maintain a clean, consistent, and leak-free workflow, we built a **Pipeline** that chained multiple steps (imputation, scaling, and regression) into one object. 
+
 Model selection was performed using **5-fold Cross Validation (CV)** with **GridSearchCV** on the training set.
 
 ---
