@@ -55,11 +55,13 @@ d. **Odometer values** – While many cars have reasonable mileage (up to 300K),
   <img src="images/odometer_distributions_bar.png" width="800"/><br>
   <em>Figure: Odometer Value Distribution</em>
 </p>
+
 e. **Extreme prices** – Over 7% of cars are listed as *free*. On the other hand, some records show extreme prices of **$1M, $10M, or even $100M**, which are almost certainly fabricated.  
 <p align="center">
   <img src="images/price_distributions_bar.png" width="800"/><br>
   <em>Figure: Odometer Value Distribution</em>
 </p>
+
 f. **Irrelevant features** – Some features, such as `id` and `VIN`, do not provide meaningful information for predicting car prices. 
 
 g. **Severely missing features** – The `size` feature has over **70% missing values**, making it practically unusable.  
