@@ -8,9 +8,7 @@ This project explores a dataset: [vehicles.csv](data/vehicles.csv) of 426,000 us
   <em>Figure 1: CRISP-DM framework.  Source: UC Berkeley</em>
 </p>
 
-This [dataset](https://github.com/StanleyWan/Coupon/blob/main/prompt.ipynb) is from the UCI Machine Learning Repository and was collected via a survey on Amazon Mechanical Turk.
-
 The final deliverable provides actionable insights and recommendations to a client—a used car dealership—on what consumers value most when purchasing a used car.
 
-Here is [the link of the Jupyter Notebook](https://github.com/StanleyWan/Coupon/blob/main/prompt.ipynb) with visualizations and probability distributions
+Here is [the link of the Jupyter Notebook :Car_Price.ipynb](https://github.com/StanleyWan/Coupon/blob/main/prompt.ipynb) with visualizations and probability distributions
 
