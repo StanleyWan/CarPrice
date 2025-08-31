@@ -36,7 +36,7 @@ Below is my initial understanding of the data:
 
 a. **Missing values** – Many features contain missing data. A summary graph shows the percentages of missing values for each feature.  
 <p align="center">
-  <img src="images/missingness_topN.png" width="400"/><br>
+  <img src="images/missingness_topN.png" width="800"/><br>
   <em>Figure: Top N features with missing values</em>
 </p>
 b. **Zero values in numeric features** – Some numeric features contain a large number of zeros. A summary table highlights this issue.  
