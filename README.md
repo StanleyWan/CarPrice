@@ -229,11 +229,3 @@ f. diesel
 
 So we highly recommend car dealership treat these 6 features as a price driver for a used car
 
-
-The meanining of the metrics:
-R²($) = 0.62.  It means the model explains ~62% of price variance in dollar spce.  For messy, real-world used-dar dta, that's respectable.
-RMSE = ~$8.8k / MAE = ~5.8k.  Typical single-car errors around $6k, with larger misses pulling RMSE up.  After 4 percents trimming(2%high, 2%low), errors drop to $7.4k/$5.36k,  so most cars are predicted within ~5-6K.
-What the table telling us
-All five regression model are basically ties.  Differences are tiny.  That implies feature signal ,not the specific linear penalty, is the main limiter.
-Then why error can sometimes still feel large? It comes from the extreme vehicles.  It behave like outliers affect the prediction.  And also Categroical sparsity is also a concern.
-So is it a "good" model.  The answer is yes though not perfect.
