@@ -12,3 +12,5 @@ The final deliverable provides actionable insights and recommendations to a clie
 
 Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) with visualizations and probability distributions
 
+[Open in Colab](https://colab.research.google.com/github/StanleyWan/CarPrice/blob/main/notebooks/my_notebook.ipynb)
+
