@@ -49,6 +49,7 @@ c. **Car age range** – The dataset includes vehicles ranging from brand new to
   <img src="images/vehicle_distribution.png" width="800"/><br>
   <em>Figure: Vehicle Age Distribution</em>
 </p>
+
 d. **Odometer values** – While many cars have reasonable mileage (up to 500K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
 
 e. **Extreme prices** – Over 7% of cars are listed as *free*. On the other hand, some records show extreme prices of **$1M, $10M, or even $100M**, which are almost certainly fabricated.  
