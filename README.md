@@ -108,13 +108,11 @@ The test set remained **untouched until the final evaluation** to ensure unbiase
 
 To maintain a clean, consistent, and leak-free workflow, we built a **Pipeline** that chained multiple steps (imputation, scaling, and regression) into one object. 
 
-Model selection was performed using **5-fold Cross Validation (CV)** with **GridSearchCV** on the training set.
-
----
+**5-fold Cross Validation (CV)** with **GridSearchCV**  was performed on the training set.  The following is the name of the Regression Model and their GridSets that used on the CV.
 
 ### Regression Models and Hyperparameter Grids
 
-| Model            | Grid Parameters Tested                                                                 |
+| Regression Model | Grid Parameters Tested                                                                 |
 |------------------|----------------------------------------------------------------------------------------|
 | Linear Regression | None                                                                                  |
 | Ridge            | `alpha`: (0.001, 0.01, 0.1, 1, 10, 100)                                               |
@@ -124,7 +122,7 @@ Model selection was performed using **5-fold Cross Validation (CV)** with **Grid
 
 ---
 
-### Best Hyperparameters Found
+### Best Hyperparameters Found after the Cross Validation
 
 | Model          | Best Params                                |
 |----------------|---------------------------------------------|
@@ -134,7 +132,7 @@ Model selection was performed using **5-fold Cross Validation (CV)** with **Grid
 | OLS (Linear)   | None                                       |
 | Huber          | `alpha = 0.001`, `epsilon = 2.5`           |
 
----
+Refit the model using the entire Training Dataset (all 80%), we got the best model.  With the best model, we thus get the prediction/evaluation with the final untouch Test DataSet.  The following is the metrics we got from the Final Test:
 
 ### Final Model Evaluation (on Test Dataset)
 
@@ -146,7 +144,6 @@ Model selection was performed using **5-fold Cross Validation (CV)** with **Grid
 | **Ridge**   | `{alpha: 10}`                                   | year, cylinders_num, js_type, odometer… | 8832.86    | 5837.82   | 0.6945   | 0.6208  | 7387.72         | 5364.58        |
 | **OLS**     | `{}`                                            | year, cylinders_num, js_type, odometer… | 8832.98    | 5837.88   | 0.6945   | 0.6208  | 7387.84         | 5364.63        |
 
----
 
 
 
