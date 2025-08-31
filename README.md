@@ -103,12 +103,16 @@ The top predictors and their corresponding cross-validation performance (negativ
 | Manufacturer  | −0.150940    |
 
 ## 4. Modeling
-In this stage, the dataset was split into **Training (80%)** and **Test (20%)** sets.  
+
+At this stage, the dataset was split into **Training (80%)** and **Test (20%)** sets.  
 The test set remained **untouched until the final evaluation** to ensure unbiased performance measurement.  
 
-To maintain a clean, consistent, and leak-free workflow, we built a **Pipeline** that chained multiple steps (imputation, scaling, and regression) into one object. 
+To maintain a clean, consistent, and leak-free workflow, we built a **Pipeline** that chained multiple steps (imputation, scaling, and regression) into one object.  
 
-**5-fold Cross Validation (CV)** with **GridSearchCV**  was performed on the training set.  The following is the name of the Regression Model and their GridSets that used on the CV.
+Model selection was performed using **5-fold Cross Validation (CV)** with **GridSearchCV** on the training set.  
+The following regression models and hyperparameter grids were evaluated:
+
+---
 
 ### Regression Models and Hyperparameter Grids
 
@@ -122,27 +126,32 @@ To maintain a clean, consistent, and leak-free workflow, we built a **Pipeline**
 
 ---
 
-### Best Hyperparameters Found after the Cross Validation
+### Best Hyperparameters Found (after Cross Validation)
 
-| Model          | Best Params                                |
-|----------------|---------------------------------------------|
-| Lasso          | `alpha = 0.0001`                           |
-| ElasticNet     | `alpha = 0.0001`, `l1_ratio = 0.1`         |
-| Ridge          | `alpha = 10`                               |
-| OLS (Linear)   | None                                       |
-| Huber          | `alpha = 0.001`, `epsilon = 2.5`           |
+| Model        | Best Params                       |
+|--------------|-----------------------------------|
+| Lasso        | `alpha = 0.0001`                  |
+| ElasticNet   | `alpha = 0.0001`, `l1_ratio = 0.1`|
+| Ridge        | `alpha = 10`                      |
+| OLS (Linear) | None                              |
+| Huber        | `alpha = 0.001`, `epsilon = 2.5`  |
 
-Refit the model using the entire Training Dataset (all 80%), we got the best model.  With the best model, we thus get the prediction/evaluation with the final untouch Test DataSet.  The following is the metrics we got from the Final Test:
+---
 
 ### Final Model Evaluation (on Test Dataset)
 
-| Model       | Best Params                                      | Selected Features                       | RMSE ($)   | MAE ($)   | R² (log) | R² ($)  | RMSE trim2% ($) | MAE trim2% ($) |
-|-------------|--------------------------------------------------|------------------------------------------|------------|-----------|----------|---------|-----------------|----------------|
-| **Huber**   | `{alpha: 0.001, epsilon: 2.5}`                  | year, cylinders_num, js_type, odometer… | 8823.15    | 5837.66   | 0.6942   | 0.6217  | 7389.41         | 5367.41        |
-| **Lasso**   | `{alpha: 0.0001}`                               | year, cylinders_num, js_type, odometer… | 8831.18    | 5837.01   | 0.6945   | 0.6210  | 7386.25         | 5363.88        |
-| **ElasticNet** | `{alpha: 0.0001, l1_ratio: 0.1}`             | year, cylinders_num, js_type, odometer… | 8832.49    | 5837.64   | 0.6945   | 0.6209  | 7387.39         | 5364.42        |
-| **Ridge**   | `{alpha: 10}`                                   | year, cylinders_num, js_type, odometer… | 8832.86    | 5837.82   | 0.6945   | 0.6208  | 7387.72         | 5364.58        |
-| **OLS**     | `{}`                                            | year, cylinders_num, js_type, odometer… | 8832.98    | 5837.88   | 0.6945   | 0.6208  | 7387.84         | 5364.63        |
+After refitting each model using the **entire training dataset (80%)**, we evaluated them on the untouched **test dataset (20%)**.  
+The performance metrics are summarized below:
+
+| Model       | Best Params                                | Selected Features                  | RMSE ($) | MAE ($) | R² (log) | R² ($) | RMSE trim2% ($) | MAE trim2% ($) |
+|-------------|--------------------------------------------|------------------------------------|----------|---------|----------|--------|-----------------|----------------|
+| **Huber**   | `{alpha: 0.001, epsilon: 2.5}`             | year, cylinders_num, js_type, odometer… | 8823.15  | 5837.66 | 0.6942   | 0.6217 | 7389.41         | 5367.41        |
+| **Lasso**   | `{alpha: 0.0001}`                          | year, cylinders_num, js_type, odometer… | 8831.18  | 5837.01 | 0.6945   | 0.6210 | 7386.25         | 5363.88        |
+| **ElasticNet** | `{alpha: 0.0001, l1_ratio: 0.1}`        | year, cylinders_num, js_type, odometer… | 8832.49  | 5837.64 | 0.6945   | 0.6209 | 7387.39         | 5364.42        |
+| **Ridge**   | `{alpha: 10}`                              | year, cylinders_num, js_type, odometer… | 8832.86  | 5837.82 | 0.6945   | 0.6208 | 7387.72         | 5364.58        |
+| **OLS**     | `{}`                                       | year, cylinders_num, js_type, odometer… | 8832.98  | 5837.88 | 0.6945   | 0.6208 | 7387.84         | 5364.63        |
+
+---
 
 
 
