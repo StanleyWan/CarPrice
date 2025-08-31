@@ -50,10 +50,15 @@ c. **Car age range** – The dataset includes vehicles ranging from brand new to
   <em>Figure: Vehicle Age Distribution</em>
 </p>
 d. **Odometer values** – While many cars have reasonable mileage (up to 500K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
+
 e. **Extreme prices** – Over 7% of cars are listed as *free*. On the other hand, some records show extreme prices of **$1M, $10M, or even $100M**, which are almost certainly fabricated.  
-f. **Irrelevant features** – Some features, such as `id` and `VIN`, do not provide meaningful information for predicting car prices.  
+
+f. **Irrelevant features** – Some features, such as `id` and `VIN`, do not provide meaningful information for predicting car prices. 
+
 g. **Severely missing features** – The `size` feature has over **70% missing values**, making it practically unusable.  
+
 h. **Non-standardized text** – Car model names are highly descriptive and inconsistent, making it difficult to reliably identify unique models.  
+
 i. **Redundancy** – Certain features disclose overlapping information (e.g., `region` and `state`), leading to redundancy in the dataset.  
 
 
