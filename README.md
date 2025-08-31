@@ -209,23 +209,3 @@ After evaluation, the predicted prices were reasonably solid, and the findings a
 Car dealerships and resellers should treat these six features as the **primary price drivers** when evaluating or pricing used vehicles.
 
 
-
-
-
-# 6. Deployment
-On the project, we used Sequential Features Selection to select 6 lowest MSE features. They are Year, Cylinders, Odometer, Drive, Fuel type, and Manufacturer.  After evaluation, the predict price is also pretty solid.  It thus can interpret as price driver for a used ca. The find out also reflect in reality.  
-a. Lower mileage 
-   price will decrease for every 10K mileage added.
-b. Newer age
-   price will decrease per year.
-c. More Cylinders
-   more cyclinders represent the better performance and capability.
-d. 4WD drive
-   it is a kind of premium.  It represent more safe and more stable.
-e. good Brand
-   good means reliable
-f. diesel  
-   diesel mostly used on truck/pickup/, it is usually pricer.
-
-So we highly recommend car dealership treat these 6 features as a price driver for a used car
-
