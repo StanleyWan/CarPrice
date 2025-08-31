@@ -154,26 +154,39 @@ The performance metrics are summarized below:
 ---
 # 6. Evaluation
 
+The major evaluation was conducted on the **final 20% untouched test set**.  
+The resulting metrics are summarized in the table above.
+
+---
+
 ### Interpreting the Metrics
 - **R² ($) = 0.62**  
-  The model explains about **62% of the variance** in car prices (in dollar space). For messy, real-world used-car data, this is a respectable level of performance.  
+  The model explains about **62% of the variance** in car prices (in dollar space).  
+  For messy, real-world used-car data, this represents a respectable level of performance.  
 
 - **RMSE ≈ $8.8K / MAE ≈ $5.8K**  
-  On average, individual predictions are off by about **$6K**, with larger errors increasing the RMSE.  
-  After trimming the most extreme 4% of records (2% high, 2% low), the errors improve to **$7.4K (RMSE) / $5.36K (MAE)** — meaning most cars are predicted within **$5K–6K**.  
+  On average, individual predictions are off by around **$6K**, with larger misses raising the RMSE.  
+  After trimming the most extreme 4% of records (2% high, 2% low), the errors improve to **$7.4K (RMSE) / $5.36K (MAE)** — indicating that most cars are predicted within **$5K–6K**.  
+
+---
 
 ### Model Comparison
-All five regression models performed nearly identically — differences in error metrics are minimal.  
-This suggests that the **predictive signal comes primarily from the features themselves**, rather than the choice of linear regularization technique.  
+All five regression models performed nearly identically — differences in error metrics were minimal.  
+This suggests that the **predictive power is primarily driven by the features themselves**, rather than the specific choice of linear regularization method.  
+
+---
 
 ### Sources of Error
-Why do errors still feel large at times?  
-- **Extreme vehicles / outliers** strongly influence residuals.  
-- **Categorical sparsity** (rare categories with limited data) adds noise and reduces precision.  
+Why can errors still appear large?  
+- **Extreme vehicles / outliers** heavily influence residuals.  
+- **Categorical sparsity** (rare categories with limited examples) reduces predictive precision.  
+
+---
 
 ### Overall Assessment
 Is this a *“good”* model?  
-✅ **Yes.** While not perfect, the model achieves a strong balance between interpretability and accuracy, and performs reasonably well given the noisy, imperfect nature of real-world used-car data.  
+✅ **Yes.** While not perfect, the model achieves a strong balance between interpretability and accuracy.  
+Given the noisy, imperfect nature of real-world used-car data, the performance is both reasonable and reliable.  
 
 
 # 6. Evaluation
