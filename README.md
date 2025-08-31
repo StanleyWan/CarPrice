@@ -102,4 +102,27 @@ The top predictors and their corresponding cross-validation performance (negativ
 | Fuel type     | −0.159953    |
 | Manufacturer  | −0.150940    |
 
+4.  Modeling
+In the Modeling section, five different regression analysis were used.  First of the first, we split the dataset into Train Dataset and Test Dataset.  The ration is on 80/20.  Then the Train Data divided into 5 fold.  4 fold for CV training and one fold for testing/evaluation. Every fold need to be the Test Dataset once.  To do the modeling, we have two procedure.  The first prcedure is Cross Validation in order to find out the best hyperparameters.  
+
+Train/Test Split = 80/20	(TrainSet: 0,8, TestSet:0.2
+In CV, the TrainSet divided into 5 fold (where Kfold = 5)
+5 Regression Models was used: LinearREgression, Ridge, Lasso, ElasticNet and    HuberRegressor.
+		GridSet Used:
+			LinearRegression : No
+			Ridge:                     GridSet for alpha:  (0.001, 0.01, 0.1, 1, 10, 100)
+			Lasso:                     GridSet for alpha:  ( 0.0001, 0.001, 0.01, 0.1, 1)
+			ElasticNet:              GridSet for alpha:  (0.0001, 0.001,0.01,0.1, )
+                                                                             GridSet for Ratio:   (0.1, 0.5, 0.9)
+			HuberRegressor    GridSet for epsilon: (1.2,1.5,1.8,2.5) 
+    GridSet for alpha:    (0.000001, 0.00001, 0.0001,0.001)
+		Run the CV (Cross Validation) and GridSearchCV, we got the best superparameter as follows:
+			Lasso:		alpha:	0.0001
+			EleasticNet	alpha:    0.0001
+					 Ratio:    0.1
+			Rdige:		 alpha:	 10
+			 OLS		  No
+			 Huber		  alpha:  0.001
+					  Epsilon 2.5
+		Refit the model using the entire training set (all 80%) got the best possible coefficients
 
