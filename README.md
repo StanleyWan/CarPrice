@@ -36,29 +36,29 @@ Below is my initial understanding of the data:
 
 a. **Missing values** – Many features contain missing data. A summary graph shows the percentages of missing values for each feature.  
 <p align="center">
-  <img src="images/missingness_topN.png" width="800"/><br>
+  <img src="images/[missingness_topN.png](https://github.com/StanleyWan/CarPrice/blob/main/images/missingness_topN.png)" width="800"/><br>
   <em>Figure: Features with missing values</em>
 </p>
 b. **Zero values in numeric features** – Some numeric features contain a large number of zeros. A summary graph highlights this issue.  
 <p align="center">
-  <img src="images/zeros_topN_numeric.png" width="800"/><br>
+  <img src="images/[zeros_topN_numeric.png](https://github.com/StanleyWan/CarPrice/blob/main/images/zeros_topN_numeric.png)" width="800"/><br>
   <em>Figure: Numeric features with missing values</em>
 </p>
 c. **Car age range** – The dataset includes vehicles ranging from brand new to over 120 years old. Extremely old cars are unrealistic and do not reflect true market prices.  
 <p align="center">
-  <img src="images/vehicle_distribution.png" width="800"/><br>
+  <img src="images/[vehicle_distribution.png](https://github.com/StanleyWan/CarPrice/blob/main/images/vehicle_distribution.png)" width="800"/><br>
   <em>Figure: Vehicle Age Distribution</em>
 </p>
 
 d. **Odometer values** – While many cars have reasonable mileage (up to 300K), some records report **1M to even 10M miles**, which are clearly unrealistic.  
 <p align="center">
-  <img src="images/odometer_distributions_bar.png" width="800"/><br>
+  <img src="images/[odometer_distributions_bar.png](https://github.com/StanleyWan/CarPrice/blob/main/images/odometer_distributions_bar.png)" width="800"/><br>
   <em>Figure: Odometer Value Distribution</em>
 </p>
 
 e. **Extreme prices** – Over 7% of cars are listed as *free*. On the other hand, some records show extreme prices of **$1M, $10M, or even $100M**, which are almost certainly fabricated.  
 <p align="center">
-  <img src="images/price_distributions_bar.png" width="800"/><br>
+  <img src="images/[price_distributions_bar.png](https://github.com/StanleyWan/CarPrice/blob/main/images/price_distributions_bar.png)" width="800"/><br>
   <em>Figure: Odometer Value Distribution</em>
 </p>
 
