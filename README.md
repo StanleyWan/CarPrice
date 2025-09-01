@@ -36,7 +36,7 @@ Below is my initial understanding of the data:
 
 a. **Missing values** – Many features contain missing data. A summary graph shows the percentages of missing values for each feature.  
 <p align="center">
-  <img src="https://github.com/StanleyWan/CarPrice/main/images/missingness_topN.png" width="800"/><br>
+  <img src="https://raw.githubusercontent.com/StanleyWan/CarPrice/main/images/missingness_topN.png" width="800"/><br>
   <em>Figure: Features with missing values</em>
 </p>
 b. **Zero values in numeric features** – Some numeric features contain a large number of zeros. A summary graph highlights this issue.  
