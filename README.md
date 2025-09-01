@@ -147,9 +147,10 @@ The following regression models and hyperparameter grids were evaluated:
 
 ---
 
-### Final Model Evaluation (on Test Dataset)
+### Final Model Training (on 80% Training Dataset)
 
-After refitting each model using the **entire training dataset (80%)**, we will get the model coefficients
+With the best hyperparameters, we refitted each model using the **entire training dataset (80%)**, we will get the model coefficients
+
 ### [Huber] Coefficients on Original Feature Units (target = log-price)
 
 | Feature        | Coefficient (Original Units) |
@@ -173,8 +174,8 @@ After refitting each model using the **entire training dataset (80%)**, we will 
 | drive_ord      | 0.137607                   |
 | js_type        | 0.107624                   |
 
-
-With the coefficient, we evaluated them on the untouched **test dataset (20%)**.  
+### Final Model Evaluation (on 20% Testing Dataset)
+With the coefficients, the trained model will be evaluated on the untouched **test dataset (20%)**.  
 The performance metrics are summarized below:
 
 | Regression Model | Best Params                                | Selected Features                  | RMSE ($) | MAE ($) | R² (log) | R² ($) | RMSE trim2% ($) | MAE trim2% ($) |
