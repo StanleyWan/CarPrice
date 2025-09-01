@@ -10,7 +10,7 @@ This project explores a used car dataset: [vehicles.csv](https://github.com/Stan
 
 The final deliverable provides actionable insights and recommendations to a client—a used car dealership—on what consumers value most when purchasing a used car.
 
-Here is [the link of the Jupyter Notebook: Car_Price.ipynb](Car_Price.ipynb) with visualizations and probability distributions. It is developed under Google's Colab.
+Here is [the link of the Jupyter Notebook: Car_Price.ipynb]([Car_Price.ipynb](https://github.com/StanleyWan/CarPrice/blob/main/Car_Price.ipynb)) with visualizations and probability distributions. It is developed under Google's Colab.
 
 # Methodology (CRISP-DM Framework)
 
